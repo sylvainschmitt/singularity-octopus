@@ -1,17 +1,24 @@
-Template Singularity container
+[Octopus](https://github.com/luntergroup/octopus)
+[Singularity](https://github.com/hpcng/singularity) container
 ================
 Sylvain Schmitt
 April 28, 2021
 
-**Bionformatics package Template**
+**Bionformatics software Octopus**
 
-Template is a set of utilities that Blah.
+Octopus is a mapping-based variant caller that implements several
+calling models within a unified haplotype-aware framework. Octopus takes
+inspiration from particle filtering by constructing a tree of haplotypes
+and dynamically pruning and extending the tree based on haplotype
+posterior probabilities in a sequential manner. This allows octopus to
+implicitly consider all possible haplotypes at a given loci in
+reasonable time.
 
-Template Version: X.X.X
+Octopus Version: 0.7.4
 
-\[URL\]
+\[<https://github.com/luntergroup/octopus>\]
 
-Singularity container based on the recipe: Singularity
+Singularity container based on the recipe: Singularity.template.def
 
 Package installation using Miniconda3 V4.7.12
 
@@ -24,18 +31,20 @@ on the registry using
 **build**:
 
 ``` bash
-sudo singularity build Singularity img.sif
+sudo singularity build octopus.sif Singularity
+singularity run octopus.sif
+singularity exec octopus.sif octopus -h
 ```
 
 **pull**:
 
 ``` bash
-singularity pull https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif
+singularity pull https://github.com/sylvainschmitt/singularity-octopus/releases/download/0.0.1/sylvainschmitt-singularity-octopus.latest.sif
 ```
 
 **snakemake**:
 
 ``` python
     singularity: 
-        "https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif"
+        "https://github.com/sylvainschmitt/singularity-octopus/releases/download/0.0.1/sylvainschmitt-singularity-octopus.latest.sif"
 ```

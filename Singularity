@@ -1,25 +1,20 @@
 Bootstrap: docker
 From :  continuumio/miniconda3
-IncludeCmd : yes
 
 %files
 environment.yml
 
 %post
-apt-get update && apt-get install -y procps && apt-get clean -y
-/opt/conda/bin/conda env create -n myEnv -f /environment.yml 
-/opt/conda/bin/conda clean -a
+/opt/conda/bin/conda env create -n octopus environment.yml
 
 %environment
-export PATH=/opt/conda/bin:$PATH
-. /opt/conda/etc/profile.d/conda.sh
-conda activate myEnv
+export PATH="/opt/conda/envs/octopus/bin/":$PATH
 
 %runscript
-echo "hello this is a template build."
+echo "octopus container: mapping-based variant caller that implements several calling models within a unified haplotype-aware framework"
 
 %help
-Tools for Snakemake template
+Tools for Octopus
 
 %labels
 Author Sylvain Schmitt

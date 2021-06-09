@@ -1,2 +1,2 @@
-# Singularity-template 0.0.9001
+# Singularity-octopus 0.0.1
 * init
